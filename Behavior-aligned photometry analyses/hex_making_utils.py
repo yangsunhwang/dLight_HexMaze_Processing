@@ -85,6 +85,9 @@ def assign_to_hexagon(x, y, centroids):
         centroids array.
     """
     # Calculate the Euclidean distance between each point and each centroid
+    x_np = x.to_numpy()[:, np.newaxis]
+    y_np = y.to_numpy()[:, np.newaxis]
+    distances = np.sqrt((x_np - centroids[:, 0])**2 + (y_np - centroids[:, 1])**2)
     distances = np.sqrt((x[:, np.newaxis] - centroids[:, 0])**2 + (y[:, np.newaxis] - centroids[:, 1])**2)
     # Find the index of the closest centroid for each point
     closest_centroid_indices = np.argmin(distances, axis=1) +1
