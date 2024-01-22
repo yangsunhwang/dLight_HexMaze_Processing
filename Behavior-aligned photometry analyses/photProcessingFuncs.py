@@ -9,6 +9,7 @@ __status__ = "development"
 
 from __main__ import *
 import csv
+import ipympl
 from scipy.ndimage import gaussian_filter
 
 def processAndPlotSigsWairPLS(sigs,datepath,Fs=250, smooth_win = int(250/30),lambd = 1e8):
