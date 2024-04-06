@@ -285,9 +285,11 @@ def align_pos_to_visits(Fs, visits, datepath, phot_dlc='n',
 
     # Load position data
     if phot_dlc == 'y':
-        dlc_pos_file = 'Behav_Vid0DLC_resnet50_Maze_UpdatedAug21shuffle1_300000.h5'
         pos_col = 'cap'
-        dlc_pos = pd.read_hdf(datepath + dlc_pos_file).DLC_resnet50_Maze_UpdatedAug21shuffle1_300000
+        # dlc_pos_file = 'Behav_Vid0DLC_resnet50_Maze_UpdatedAug21shuffle1_300000.h5'
+        # dlc_pos = pd.read_hdf(datepath + dlc_pos_file).DLC_resnet50_Maze_UpdatedAug21shuffle1_300000 
+        dlc_pos_file = 'Behav_Vid0DLC_resnet50_Triangle_Maze_Phot_RobustJun8shuffle1_250000.h5'
+        dlc_pos = pd.read_hdf(datepath + dlc_pos_file).DLC_resnet50_Triangle_Maze_Phot_RobustJun8shuffle1_250000
     else:
         dlc_pos_file = 'Behav_Vid0DLC_resnet50_Triangle_Maze_EphysDec7shuffle1_800000.h5'
         pos_col = 'cap_back'#'cap_front' if use_centroid else 'cap_back'

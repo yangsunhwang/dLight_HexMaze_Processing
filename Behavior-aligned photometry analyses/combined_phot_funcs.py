@@ -605,12 +605,12 @@ class PhotRats(Photrat):
                 elif ports[p-1]==0:
                     fac.append(data.loc[vinds[p],'lenAC'])
         else:
-            for p in range(1,len(ports)): #append values of going left
-                if ports[p-1]==2:
-                    fac.append(data.loc[vinds[p],factor+'_b'])
-                elif ports[p-1]==1:
+            for p in range(1,len(ports)): #append values of going left # for p in range is 1, 2, 3, 4...
+                if ports[p-1]==2: #for last visit port2:C (as new starting point), pB is left choice, regardless of your current choice (ports[p]).
+                    fac.append(data.loc[vinds[p],factor+'_b']) 
+                elif ports[p-1]==1: #for last visit port1:B (as new starting point), pA is left choice, regardless of your current choice (ports[p]).
                     fac.append(data.loc[vinds[p],factor+'_a'])
-                elif ports[p-1]==0:
+                elif ports[p-1]==0: #for last visit port0:A (as new starting point), pC is left choice, regardless of your current choice (ports[p]).
                     fac.append(data.loc[vinds[p],factor+'_c'])
         return fac
     

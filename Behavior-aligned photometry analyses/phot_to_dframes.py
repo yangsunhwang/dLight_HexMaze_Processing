@@ -20,7 +20,7 @@ from __main__ import *
 #set path to access previously stored .mat files, etc. use scipy.io.loadmat()
 datepath = filepath + date + '/'
 savepath = datepath
-phot_dlc = input('photometry DLC? y/n')
+phot_dlc = input('photometry DLC (y) or ephys DLC (n)? y/n')
 
 from photProcessingFuncs import *
 
