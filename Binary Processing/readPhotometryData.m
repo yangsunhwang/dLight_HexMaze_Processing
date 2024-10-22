@@ -47,7 +47,11 @@ phot.signal_Label(signal,:) =  char(fread(fid,256,'char'));
 end
 
 position = ftell(fid);
+disp(['File position: ', num2str(position)]);
+
 phot.pad = fread(fid,phot.header_Size-position,'uint8');
+
+disp(ftell(fid));
 phot.Data = fread(fid,'int16');
 fclose(fid);
 

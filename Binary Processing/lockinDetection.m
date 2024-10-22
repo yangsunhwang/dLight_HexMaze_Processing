@@ -65,7 +65,9 @@ else
         [b,a] = butter(filterorder,Fc/(Fs/2));
     end
     
-    
+    format long
+    disp([b, a])
+
     sig1y = filter(b,a,demod1);
     sig2y = filter(b,a,demod2);
     

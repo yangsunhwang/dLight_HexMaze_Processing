@@ -1,6 +1,6 @@
 clc;clear;
 
-[file,path,FilterIndex]  = uigetfile('W:\Photometry\IM-1661\*.*');
+[file,path,FilterIndex]  = uigetfile('W:\Photometry\IM-1478\*.*');
 file = [path filesep file];
 
 [pathstr,nameSession,ext] = fileparts(file);
@@ -9,6 +9,8 @@ file = [pathstr nameSession];
 software=1;  % Software lockin
 
 phot=readPhotometryData(file);
+
+
 
 box.file = [file '.box'];
 
