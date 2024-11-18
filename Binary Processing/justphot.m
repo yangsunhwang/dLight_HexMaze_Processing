@@ -1,6 +1,6 @@
 clc;clear;
 
-[file,path,FilterIndex]  = uigetfile('W:\Photometry\IM-1478\*.*');
+[file,path,FilterIndex]  = uigetfile('W:\Photometry\IM-1695\*.*');
 file = [path filesep file];
 
 [pathstr,nameSession,ext] = fileparts(file);

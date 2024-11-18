@@ -232,6 +232,7 @@ def create_hexdata(data,hexIDs,hex_centers,hexlabels):
     hexseq = hexdata.loc[hexdata.hexIDs.isnull()==False,'hexlabels'].astype(int)
     hexseq = list(hexseq.loc[hexseq.diff() != 0].values)
     data.loc[:,'hexlabels']=hexdata.hexlabels
+    #data['hexlabels']=hexdata.hexlabels
     return hexdata,data,hexseq
 
 def make_hexlist(sampledata):
